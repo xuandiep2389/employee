@@ -1,3 +1,13 @@
-<p>
-  employee-detail works!
-</p>
+<div *ngIf="emp">
+  <h4>{{emp.name | uppercase}} information</h4>
+  <div>
+    id: {{emp.id}}
+  </div>
+  <div>
+    name: {{emp.name}}
+  </div>
+  <div>
+    extra info: {{emp.detail}}
+  </div>
+</div>
+

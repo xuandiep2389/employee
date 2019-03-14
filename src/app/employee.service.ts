@@ -23,4 +23,9 @@ export class EmployeeService {
     return this.http.post<Employee>(this.employeeURL, employee)
     
   }
+
+  getEmployee(id: number): Observable<Employee> {
+    const url = `${this.employeeURL}/${id}`;
+    return this.http.get<Employee>(url);
+  }
 }

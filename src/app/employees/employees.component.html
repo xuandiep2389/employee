@@ -2,11 +2,12 @@
   <div><h2>Employees list</h2></div>
   <div>
     <ul>
-      <li *ngFor="let emp of employees" (click)="selectedEmp(emp)">
-        <span>{{emp.id}}</span> {{emp.name}}
+      <li *ngFor="let emp of employees">
+        <a routerLink="/detail/{{emp.id}}">
+          <span>{{emp.id}}</span> {{emp.name}}
+        </a>
       </li>
     </ul>
   </div>
 </div>
-<a routerLink="add">add employee</a>
-<app-employee-detail [emp]="selectedEmployee"></app-employee-detail>
+<a routerLink="/add">add employee</a>

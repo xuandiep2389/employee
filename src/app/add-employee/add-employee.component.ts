@@ -3,6 +3,7 @@ import {EmployeeService} from '../employee.service';
 import {FormBuilder, FormGroup} from '@angular/forms';
 import {Router} from '@angular/router';
 import {Employee} from '../Employee';
+import {Location} from "@angular/common";
 
 @Component({
   selector: 'app-add-employee',
@@ -16,7 +17,8 @@ export class AddEmployeeComponent implements OnInit {
 
   constructor(private employeeService: EmployeeService,
               private formBuilder: FormBuilder,
-              private router: Router) { }
+              private router: Router,
+              private location: Location) { }
 
   ngOnInit() {
     this.employeeForm = this.formBuilder.group({
@@ -36,8 +38,13 @@ export class AddEmployeeComponent implements OnInit {
             name: '',
             detail: ''
           }
-        )
+        );
+        this.goBack();
       })
     }
+  }
+
+  goBack(): void {
+    this.location.back();
   }
 }

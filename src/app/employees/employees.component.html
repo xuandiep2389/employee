@@ -1,13 +1,14 @@
 <div>
   <div><h2>Employees list</h2></div>
   <div>
-    <ul>
-      <li *ngFor="let emp of employees">
+    <table>
+      <tr *ngFor="let emp of employees">
+        <td>{{emp.id}}</td>
         <a routerLink="/detail/{{emp.id}}">
-          <span>{{emp.id}}</span> {{emp.name}}
+          <td>{{emp.name}}</td>
         </a>
-      </li>
-    </ul>
+      </tr>
+    </table>
   </div>
 </div>
 <a routerLink="/add">add employee</a>
